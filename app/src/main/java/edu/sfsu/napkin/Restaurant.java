@@ -1,0 +1,105 @@
+package edu.sfsu.napkin;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+/**
+<<<<<<< HEAD
+ * Created by Christopher on 11/14/2015.
+=======
+ * Restaurant class that stores all the restaurants
+ * @author Christopher Dea (wrote line 14-88)
+ * @since 11/14/2015.
+>>>>>>> 5a3f2ccc2d54930c52b0d84f6c55b691f3853820
+ */
+public class Restaurant {
+    private String name;
+    private JSONArray address;
+    private String city;
+    private String stateCode;
+    private String postalCode;
+    private String phone;
+    private double latitude;
+    private double longitude;
+    private String imageUrl;
+    private String ratingImgUrlLarge;
+    private double distance;
+
+<<<<<<< HEAD
+
+=======
+    /**
+     * Gets all the info from the parse JSON and stores them here
+     * @author Christopher Dea
+     * @since 11/14/2015.
+     */
+>>>>>>> 5a3f2ccc2d54930c52b0d84f6c55b691f3853820
+    public Restaurant(String name, JSONArray address, String city, String stateCode, String postalCode,
+                      double latitude, double longitude, String phone, String imageUrl, String ratingImgUrlLarge, double distance) {
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.stateCode = stateCode;
+        this.postalCode = postalCode;
+        this.phone = phone;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.imageUrl = imageUrl;
+        this.ratingImgUrlLarge = ratingImgUrlLarge;
+        this.distance = distance;
+    }
+
+<<<<<<< HEAD
+=======
+    /**
+     * Bunch of getters method to get particular info of the restaurant
+     * @author Christopher Dea wrote line 52 - 95)
+     * @since 11/14/2015.
+     */
+>>>>>>> 5a3f2ccc2d54930c52b0d84f6c55b691f3853820
+    public String getName() { return name; }
+    public JSONArray getDisplayAddress() {
+        return address;
+    }
+
+    public String getDisplayAddressPretty() {
+        StringBuilder prettyAddress = new StringBuilder();
+        for (int i = 0; i < address.length(); i++) {
+            try {
+                prettyAddress.append(address.get(i)).append("\n");
+            } catch (JSONException e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        return prettyAddress.toString();
+    }
+    public String getCity(){
+        return city;
+    }
+    public String getStateCode(){
+        return stateCode;
+    }
+    public String getPostalCode(){
+        return postalCode;
+    }
+    public String getPhone(){
+        return phone;
+    }
+    public double getLatitude() { return latitude; }
+    public double getLongitude() { return longitude; }
+    public String getImageUrl() { return imageUrl; }
+    public String getRatingImgUrlLarge() {return ratingImgUrlLarge; }
+    public double getDistance(){return distance; }
+    public String getDistanceMiles(){
+        double distance = getDistance();
+        String distanceText;
+
+        distance = (distance/ 1609.344);
+        distanceText = String.format( "%.2f", distance);
+        distanceText = String.format("%s mi", distanceText);
+
+        return distanceText;
+    }
+}
